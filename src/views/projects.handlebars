@@ -1,0 +1,38 @@
+<section class="container-fluid portfolio reusable" id="portfolio">
+    <h1 class="text-center fw-bold fs-5 text-uppercase mt-5" style="color: #05555c;">Mis proyectos personales</h1>
+    <main class="mainContainer">
+        <div class="gallery">
+            {{#each proyectos}}
+            <div class="item" title={{title}}>
+                <img src={{image}} alt={{title}}>
+                <div class="overlay">
+                    <form action="/project/{{id}}" method="GET">
+                        <button type="submit" class="btn btn-outline-success">Detalle del proyecto</button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="container mt-3 pb-5 mb-5">
+            <div class="row text-center">
+                <p class="text-dark fw-bold">
+                    <a class="text-decoration-none text-dark me-2" href="/projects?page={{prevPage}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-caret-left" viewBox="0 0 16 16">
+                            <path
+                                d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753" />
+                        </svg>
+                    </a>
+                    {{currentPage}} / {{totalPages}}
+                    <a class="text-decoration-none text-dark ms-2" href="/projects?page={{nextPage}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path
+                                d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753" />
+                        </svg>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </main>
+</section>
