@@ -1,14 +1,58 @@
-<section class="container-fluid portfolio reusable" id="portfolio">
-    <h1 class="text-center fw-bold fs-5 text-uppercase mt-5" style="color: #05555c;">Mis proyectos personales</h1>
-    <main class="mainContainer">
+
+<section class="home2" id="home">
+    <nav class="navbar">
+        <div>
+            <a class="text-decoration-none fs-5 fw-bold" style="color: #0d737c;" href="/">Gabriel<span
+                    style="color: #268c96;">Castro</span>
+            </a>
+        </div>
+        <ul class="nav-links mt-3">
+            <li><a class="fw-bold" href="/">Inicio</a></li>
+            <li><a class="fw-bold" href="/#about">Sobre mi</a></li>
+            <li><a class="fw-bold" href="/projects">Proyectos</a></li>
+            <li><a class="fw-bold" href="/#contact">Contactame</a></li>
+        </ul>
+        <a href="#" class="button-wrapper">
+            <a href="https://api.whatsapp.com/send/?phone=3146381395" target="_blank"><button type="button"
+                    class="btn contact-btn">Contactame</button></a>
+        </a>
+        <div class="menu-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    </div>
+</section>
+<section class="container-fluid portfolio reusable mt-5 py-5" id="portfolio">
+    <div class="d-flex align-items-center justify-content-center gap-5 mb-2">
+        <ul class="nav nav-pills d-flex gap-4">
+        <li class="nav-item dropdown border btn-prod rounded">
+            <a class="nav-link dropdown-toggle text-center text-dark fw-bold" data-bs-toggle="dropdown" href="#"
+                role="button" aria-expanded="false">Filtrar por tecnologia</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item fw-bold" href="/projects">Todos los proyectos</a></li>
+                <li><a class="dropdown-item fw-bold" href="/projects?query=HTML">HTML - CSS - JS</a></li>
+                <li><a class="dropdown-item fw-bold" href="/projects?query=React">React Js</a></li>
+                <li><a class="dropdown-item fw-bold" href="/projects?query=Node">Node & Express</a></li>
+                <li><a class="dropdown-item fw-bold" href="/projects?query=Python">Python</a></li>
+                <li><a class="dropdown-item fw-bold" href="/projects?query=MySQL">MySQL</a></li>
+            </ul>
+        </li>
+    </ul>
+     <a class="nav-link text-center text-dark border btn-prod rounded p-2 fw-bold" href="/">Volver al inicio</a>
+    </div>
+    <main class="container mt-4 mainContainer">
         <div class="gallery">
             {{#each proyectos}}
             <div class="item" title={{title}}>
-                <img src={{image}} alt={{title}}>
+                <h6 class="text-center fw-bold text-uppercase">{{title}}</h6>
+                <img src={{image}} alt={{title}} class="img-fluid">
                 <div class="overlay">
                     <form action="/project/{{id}}" method="GET">
-                        <button type="submit" class="btn btn-outline-success">Detalle del proyecto</button>
+                        <button type="submit" class="btnCv">Detalle del proyecto</button>
                     </form>
+                    <a href="{{repository_link}}" class="btnCv ms-3 border border-transparent" target="_blank">Ver Proyecto</a>
                 </div>
             </div>
             {{/each}}

@@ -19,7 +19,6 @@ const schema = new mongoose.Schema({
     },
     deploy_link: {
         type: String,
-        required: true
     },
     tecnology: {
         type: String,

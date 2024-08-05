@@ -3,7 +3,7 @@ const ProjectModel = require("../model/projects.model");
 class ProjectRepository {
   async createProject({ title, description, image, repository_link, deploy_link, tecnology }) {
     try {
-      if (!title || !description || !image || !repository_link || !deploy_link || !tecnology) {
+      if (!title || !description || !image || !repository_link || !tecnology) {
         console.warn("Todos los campos son obligatorios");
         return;
       }
