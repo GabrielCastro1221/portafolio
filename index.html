@@ -28,10 +28,10 @@
             Gabriel<span style="color: #268c96">Castro</span>
           </a>
         </div>
-        <ul class="nav-links mt-3">
+        <ul class="nav-links mt-3" id="navBar">
           <li><a class="fw-bold" href="#home">Inicio</a></li>
           <li><a class="fw-bold" href="#about">Sobre mí</a></li>
-          <li><a class="fw-bold" href="/projects">Proyectos</a></li>
+          <li><a class="fw-bold" href="#projects">Proyectos</a></li>
           <li><a class="fw-bold" href="#contact">Contáctame</a></li>
         </ul>
         <div class="button-wrapper">
@@ -74,29 +74,7 @@
           src="https://raw.githubusercontent.com/GabrielCastro1221/imgs_portfolio/main/Imagen%20de%20WhatsApp%202024-06-11%20a%20las%2001.29.57_1155f262.jpg"
           alt="Gabriel Castro Avatar"
         />
-        <div class="social-media">
-          <a
-            href="https://github.com/GabrielCastro1221"
-            title="Perfil de GitHub"
-            target="_blank"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gabriel-castro-ramirez-b5b590252/"
-            title="Perfil de Linkedin"
-            target="_blank"
-          >
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://api.whatsapp.com/send/?phone=3146381395"
-            title="Contacto vía WhatsApp"
-            target="_blank"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
+        <div class="social-media" id="social"></div>
       </div>
       <div class="about-desc">
         <h3 class="fw-bold">Sobre mí</h3>
@@ -137,109 +115,41 @@
           <header class="title-resume">
             <h2>EDUCACIÓN</h2>
           </header>
-          <div class="contents">
-            <div class="box-resume">
-              <h4>2018 - 2022</h4>
-              <h3>High School Degree</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
-              </p>
-            </div>
-            <div class="box-resume">
-              <h4>2018 - 2022</h4>
-              <h3>Bachelor's Degree</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
-              </p>
-            </div>
-            <div class="box-resume">
-              <h4>2018 - 2022</h4>
-              <h3>Master Degree</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
-              </p>
-            </div>
-          </div>
+          <div class="contents" id="education"></div>
         </section>
 
         <section class="col-resume">
           <header class="title-resume">
-            <h2>EXPERIENCIA</h2>
+            <h2>Habilidades</h2>
           </header>
-          <div class="contents">
-            <div class="box-resume">
-              <h4>2018 - 2022</h4>
-              <h3>UI/UX Designer</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
-              </p>
-            </div>
-            <div class="box-resume">
-              <h4>2018 - 2022</h4>
-              <h3>Full-Stack Developer</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
-              </p>
-            </div>
-            <div class="box-resume">
-              <h4>2018 - 2022</h4>
-              <h3>Frontend Developer</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
-              </p>
-            </div>
-          </div>
+          <div class="contents" id="skills"></div>
         </section>
       </main>
     </section>
 
-    <div class="container-p">
+    <section class="container-p" id="projects">
       <h2>Mis proyectos personales</h2>
-      <ul class="filter-menu mt-4">
-        <li data-target="all">Todos los proyectos</li>
-        <li data-target="front">Frontend</li>
-        <li data-target="back">Backend</li>
-        <li data-target="data">Data Science</li>
+      <ul class="filter-menu mt-4" id="menuProjects"></ul>
+      <ul class="filter-item" id="portfolio">
+        <li data-item="back">
+          <img src="/assets/images/bookingMedico.jpg" alt="" />
+        </li>
+        <li data-item="front">
+          <img src="/assets/images/calculadora.jpg" alt="" />
+        </li>
+        <li data-item="data">
+          <img src="/assets/images/cardiopatia.jpg" alt="" />
+        </li>
+        <li data-item="back">
+          <img src="/assets/images/ecommerce.jpg" alt="" />
+        </li>
+        <li data-item="data">
+          <img src="/assets/images/nba.jpeg" alt="" />
+        </li>
       </ul>
+    </section>
 
-      <ul class="filter-item">
-        <li data-item="front"><img src="/assets/images/male1.jpg" alt="" /></li>
-        <li data-item="front"><img src="/assets/images/male2.jpg" alt="" /></li>
-        <li data-item="back">
-          <img src="/assets/images/female1.jpg" alt="" />
-        </li>
-        <li data-item="back">
-          <img src="/assets/images/female2.jpg" alt="" />
-        </li>
-        <li data-item="data"><img src="/assets/images/kid1.jpg" alt="" /></li>
-        <li data-item="data"><img src="/assets/images/kid2.jpg" alt="" /></li>
-        <li data-item="back">
-          <img src="/assets/images/female3.jpg" alt="" />
-        </li>
-        <li data-item="back">
-          <img src="/assets/images/female4.jpg" alt="" />
-        </li>
-        <li data-item="back">
-          <img src="/assets/images/female5.jpg" alt="" />
-        </li>
-        <li data-item="front"><img src="/assets/images/male3.jpg" alt="" /></li>
-        <li data-item="front"><img src="/assets/images/male4.jpg" alt="" /></li>
-        <li data-item="data"><img src="/assets/images/kid3.jpg" alt="" /></li>
-        <li data-item="data"><img src="/assets/images/kid4.jpg" alt="" /></li>
-      </ul>
-    </div>
+    <section id="contact"></section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
