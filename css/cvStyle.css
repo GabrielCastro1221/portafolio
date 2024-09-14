@@ -75,7 +75,7 @@
 }
 
 .resume_wrapper .resume_left .resume_skills .skills_list {
-  display: flex;
+  display: grid;
   justify-content: space-between;
   margin-bottom: 5px;
 }
@@ -168,6 +168,24 @@
   font-size: 38px;
   color: #0175b2;
   margin-bottom: 10px;
+}
+
+.bld {
+  font-weight: 800;
+}
+
+.socialColor {
+  color: #05555c;
+}
+
+.socialColor:hover {
+  color: #186f78;
+}
+
+@media print {
+  .resume_wrapper {
+    margin: 10mm;
+  }
 }
 
 @media screen and (max-width: 800px) {
