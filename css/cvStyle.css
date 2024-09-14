@@ -174,14 +174,17 @@
   .resume_wrapper .resume_right .resume_namerole {
     display: none;
   }
+
   .resume_wrapper .resume_left .resume_namerole {
     display: block;
   }
+
   .resume_wrapper {
     width: 95%;
     margin: 10px auto;
     flex-direction: column;
   }
+
   .resume_wrapper .resume_left,
   .resume_wrapper .resume_right {
     width: 100%;
@@ -192,23 +195,28 @@
   .resume_wrapper .resume_right {
     padding: 20px 30px;
   }
+
   .resume_wrapper .resume_right .resume_data {
     flex-direction: column;
   }
+
   .resume_wrapper .resume_right .resume_data .year {
     padding: 0;
     margin-bottom: 5px;
     width: 100%;
     color: #0175b2;
   }
+
   .resume_wrapper .resume_right .resume_data .year:before,
   .resume_wrapper .resume_right .resume_data .year:after {
     display: none;
   }
+
   .resume_wrapper .resume_right .resume_data .content {
     width: 100%;
     padding: 0;
   }
+
   .resume_wrapper .resume_right .resmue_interests .interests .int_icon {
     font-size: 24px;
   }
