@@ -229,6 +229,18 @@ function scrollFunction() {
   }
 }
 
+function actualizarEdad(fechaNacimiento) {
+  const hoy = new Date();
+  const nacimiento = new Date(fechaNacimiento);
+  let edad = hoy.getFullYear() - nacimiento.getFullYear();
+  const mes = hoy.getMonth() - nacimiento.getMonth();
+  if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+    edad--;
+  }
+  document.getElementById("edad").textContent = edad + " años";
+}
+actualizarEdad("1988-09-14");
+
 socialData.forEach((item) => {
   let a = document.createElement("a");
   a.href = item.link;
@@ -244,8 +256,8 @@ let educationContentHTML = "";
 education.forEach((edu) => {
   educationContentHTML += `
     <div class="box-resume" id="${edu.id}">
-      <h3>${edu.degree}</h3>
-      <p><strong>Escuela:</strong> ${edu.school}</p>
+      <h3 class="fw-bold">${edu.degree}</h3>
+      <p><strong>Institución:</strong> ${edu.school}</p>
       <p><strong>Fechas:</strong> ${edu.startingDate} - ${
     edu.endingDate || "Actualidad"
   }</p>
@@ -259,7 +271,7 @@ let skillsContentHTML = "";
 skills.forEach((skill) => {
   skillsContentHTML += `
     <div class="box-resume" id="${skill.id}">
-      <h3>${skill.degree}</h3>
+      <h3 class="fw-bold">${skill.degree}</h3>
       <p><strong>Fechas:</strong> ${skill.startingDate} - ${skill.endingDate}</p>
       <p><strong>Habilidades:</strong> ${skill.skills}</p>
     </div>
@@ -327,8 +339,8 @@ projectsData.forEach((project) => {
               <h5 class="card-title">${project.title}</h5>
               <p class="card-text">${project.desc}</p>
               <div class="d-flex align-items-center justify-content-around">
-                <a href="${project.repo}" class="btn btn-primary">Repositorio</a>
-                <a href="${project.deploy}" class="btn btn-primary">Deploy</a>
+                <a href="${project.repo}" target="_blank" class="btnCv">Repositorio</a>
+                <a href="${project.deploy}" target="_blank" class="btnCv">Deploy</a>
               </div>
             </div>
           </div>
