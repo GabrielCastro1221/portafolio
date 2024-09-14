@@ -39,7 +39,6 @@ const education = [
     school: "Instituto Argentino de Computacion (IAC)",
     degree: "Desarrollo web",
     desc: "El curso de desarrollo web cubre HTML, CSS y JavaScript, enseña los fundamentos de cómo construir sitios web interactivos y estilizados. Al final del curso se debe ser capaz de crear sitios web completos que no solo tengan una estructura y estilo atractivo, sino que también interactúen con el usuario de manera dinámica.",
-    certificate: ["#"],
   },
   {
     id: "edu-2",
@@ -48,12 +47,6 @@ const education = [
     school: "CoderHouse",
     degree: "Carrera Desarrollo FrontEnd React Js",
     desc: "La carrera de Frontend con React.js se enfoca en el desarrollo de interfaces de usuario (UI) para aplicaciones web modernas utilizando tecnologías del lado del cliente.",
-    certificate: [
-      /*"../assets/images/DesarrolloWebTop10.png",
-      "../assets/images/JavaScriptTop10.png",
-      "../assets/images/ReactJsTop10.png",
-      "../assets/images/CarreraReactJsTop10.png",*/
-    ],
   },
   {
     id: "edu-3",
@@ -62,7 +55,6 @@ const education = [
     school: "CoderHouse",
     degree: "Carrera Desarrollo Full Stack",
     desc: "La carrera de Desarrollo Full Stack abarca tanto el desarrollo frontend (del lado del cliente) como el backend (del lado del servidor), lo que significa que como desarrollador full stack puedes trabajar en todas las capas de una aplicación web.",
-    certificate: ["#"],
   },
   {
     id: "edu-4",
@@ -71,11 +63,6 @@ const education = [
     school: "CoderHouse",
     degree: "Carrera Data Science",
     desc: "La carrera en Data Science (Ciencia de Datos) sirve para trabajar con grandes volúmenes de datos, utilizando herramientas y técnicas estadísticas, matemáticas y computacionales para extraer conocimiento y obtener insights útiles para la toma de decisiones.",
-    certificate: [
-      /*"../assets/images/DataAnalytics.png",
-      "../assets/images/DataScienceITop10.png",
-      "../assets/images/DataScienceIITop10.png",*/
-    ],
   },
   {
     id: "edu-5",
@@ -84,9 +71,6 @@ const education = [
     school: "CoderHouse",
     degree: "SQL",
     desc: "El curso de SQL (Structured Query Language) está diseñado para saber cómo interactuar con bases de datos relacionales.",
-    certificate: [
-      /*"../assets/images/SQLTop10.png"*/
-    ],
   },
 ];
 
@@ -179,7 +163,7 @@ const projectsData = [
     title: "Calculadora Cientifica",
     desc: "Calculadora cientifica con botones que permiten realizar varias operaciones matemáticas, desde simples sumas y restas hasta funciones más complejas como factoriales y potencias. Además, maneja ángulos en radianes o grados y tiene funciones trigonométricas.",
     repo: "https://github.com/GabrielCastro1221/Calculadora_cientifica.git",
-    deploy: "#",
+    deploy: "https://calculadora-cientifica.onrender.com/",
   },
   {
     id: "pro-4",
