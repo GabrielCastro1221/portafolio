@@ -118,60 +118,6 @@ const skills = [
   },
 ];
 
-const projectsData = [
-  {
-    id: "pro-2",
-    img: "/public/assets/images/cardiopatia.jpg",
-    title: "Simulacion Cardiopatia",
-    desc: "Modelo Desarrollado con python en google Colab el predice enfermedades cardiacas en una persona, para lograr esto se obtuvieron los datos de un conjunto de datos donde se aloja la información de varias métricas de salud de pacientes cardíacos a la cual se le realizo una limpieza de datos para poder hacer calculos precisos para una prediccion optima, fuera de eso se implementaron las tecnicas de analisis exploratorio las cuales ayudaron a analizar los datos de una manera visual para entender los datos mas facil, luego se selecciono el algoritmo de regresion el cual permitio entrenar el modelo de datos y de acuerdo a los resultados de las metricas calculadas por el modelo se analizo cual de los modelos fue el mas acertivo en la precicción. Luego se hizo una simulación donde se le pasaron por parametro cada uno de los valores de las metricas de cada paciente, dichos valores son los campos que contiene el conjunto de datos y de acuerdo a dichas metricas el sistema dira si esa persona tiene o no problemas cardiacos.",
-    repo: "https://github.com/GabrielCastro1221/Simulacion_Cardiopatia_jupyter_notebook.git",
-    deploy:
-      "https://github.com/GabrielCastro1221/Simulacion_Cardiopatia_jupyter_notebook/blob/main/simulacion_cardiopatia.ipynb",
-  },
-  {
-    id: "pro-3",
-    img: "/public/assets/images/calculadora.jpg",
-    title: "Calculadora Cientifica",
-    desc: "Calculadora cientifica con botones que permiten realizar varias operaciones matemáticas, desde simples sumas y restas hasta funciones más complejas como factoriales y potencias. Además, maneja ángulos en radianes o grados y tiene funciones trigonométricas.",
-    repo: "https://github.com/GabrielCastro1221/Calculadora_cientifica.git",
-    deploy: "https://calculadora-cientifica.onrender.com/",
-  },
-  {
-    id: "pro-4",
-    img: "/public/assets/images/nba.jpeg",
-    title: "Simulacion Juegos NBA",
-    desc: "Simulacion de partidos entre 2 equipos de la NBA, este notebook recibe una funcion que ejecuta la simulacion del juego, para esto recibira dos parametros los cuales seran los nombres de los equipos a los cuales se desea enfrentar en la simulacion dando como resultado el posible ganador del partido.",
-    repo: "https://github.com/GabrielCastro1221/Simulacion_Partidos_NBA_jupyter_notebook.git",
-    deploy:
-      "https://github.com/GabrielCastro1221/Simulacion_Partidos_NBA_jupyter_notebook/blob/main/ProyectoDS_GabrielCastroRamirez.ipynb",
-  },
-  {
-    id: "pro-5",
-    img: "/public/assets/images/bookingMedico.jpg",
-    title: "Booking Medico",
-    desc: "Booking medico desarrollado con MongoDB, Express, React Js, Node Js (MERN STACK), en esta pagina el usuario podra ingresar y solicitar una cita medica con el medico especialista de su preferencia, navegando entre todos los medicos hasta encontrar el indicado para diagnosticar su salud, esta pagina cuanta con paneles de administrador de usuarios y pacientes, tambien cuanta con un formulario donde etara la informacion de los horarios de las citas disponibles de cada doctor y en este se podra agendar la cita que quedara registrada en la base de datos.",
-    repo: "https://github.com/GabrielCastro1221/booking_medico_MERN.git",
-    deploy: "#",
-  },
-  {
-    id: "pro-6",
-    img: "/public/assets/images/fakeNews.jpg",
-    title: "Detector Fake News",
-    desc: "Detector de noticias falsas utilizando una red neuronal LSTM (Long Short-Term Memory) es un modelo de aprendizaje profundo diseñado para clasificar noticias como verdaderas o falsas basándose en su contenido textual, El modelo se entrena utilizando un conjunto de datos etiquetado de noticias verdaderas y falsas. Durante el entrenamiento, el modelo ajusta sus pesos para minimizar el error en la clasificación. Una vez entrenado y evaluado, el modelo puede utilizarse para predecir si nuevas noticias son verdaderas o falsas al procesar el texto a través de la red LSTM.",
-    repo: "https://colab.research.google.com/drive/1N81w_WpW2_Qubyxcl6lMBIl1Pg3bjBnZ",
-    deploy:
-      "https://colab.research.google.com/drive/1N81w_WpW2_Qubyxcl6lMBIl1Pg3bjBnZ",
-  },
-  {
-    id: "pro-7",
-    img: "/public/assets/images/chat.jpg",
-    title: "Chat comunitario",
-    desc: "Chat comunitario en tiempo real desarrollado con Node.js, Express y Socket.io, que incluye autenticación de inicio de sesión implementada con JSON Web Token (jsonwebtoken)",
-    repo: "https://github.com/GabrielCastro1221/Chat_mongoDB_socket.io.git",
-    deploy: "https://comunitary-chat.onrender.com/",
-  },
-];
-
 menuBtn.addEventListener("click", activeClass);
 function activeClass() {
   menuBtn.classList.toggle("active");
@@ -248,97 +194,71 @@ skills.forEach((skill) => {
 });
 skillsDiv.innerHTML = skillsContentHTML;
 
-portfolio.style.display = "grid";
-portfolio.style.gridTemplateColumns = "repeat(3, 1fr)";
-portfolio.style.gap = "5px";
+const getProjects = async () => {
+  try {
+    const response = await fetch("http://localhost:8080/api/v1/projects");
+    const data = await response.json();
+    if (data.status) {
+      renderProjects(data.proyectos);
+    } else {
+      console.error(data.message);
+    }
+  } catch (err) {
+    console.error("Error al obtener los proyectos:", err);
+  }
+};
 
-projectsData.forEach((project) => {
-  const li = $.createElement("li");
-  li.setAttribute("data-bs-toggle", "modal");
-  li.setAttribute("data-bs-target", `#${project.id}`);
-  const imgContainer = $.createElement("div");
-  imgContainer.classList.add("project-img-container");
-  const img = $.createElement("img");
-  img.src = project.img;
-  img.alt = project.title;
-  img.classList.add("img-fluid", "img-thumbnail");
-  imgContainer.appendChild(img);
-  li.appendChild(imgContainer);
-  portfolio.appendChild(li);
-  const modal = $.createElement("div");
-  modal.classList.add("modal", "fade");
-  modal.id = project.id;
-  modal.tabIndex = -1;
-  modal.setAttribute("aria-labelledby", `${project.id}Label`);
-  modal.setAttribute("aria-hidden", "true");
-
-  modal.innerHTML = `
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="${project.id}Label">${project.title}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <img src="${project.img}" class="card-img-top img-fluid" alt="${project.title}" />
-            <div class="card-body">
-              <h5 class="card-title">${project.title}</h5>
-              <p class="card-text">${project.desc}</p>
-              <div class="d-flex align-items-center justify-content-around">
-                <a href="${project.repo}" target="_blank" class="btnCv">Repositorio</a>
-                <a href="${project.deploy}" target="_blank" class="btnCv">Deploy</a>
-              </div>
-            </div>
-          </div>
-        </div>
+const renderProjects = (projects) => {
+  const container = $.getElementById("projects");
+  container.innerHTML = "";
+  projects.forEach((project) => {
+    const projectElement = $.createElement("div");
+    projectElement.classList.add("project-card");
+    projectElement.innerHTML = `
+    <div class="card" style="width: 18rem;">
+      <img src=${project.img} class="card-img-top" alt=${project.title}>
+      <div class="card-body">
+        <h5 class="card-title">${project.title}</h5>
+        <a href="#" class="btn btn-primary">Detalle del proyecto</a>
       </div>
-    </div>
-  `;
-  $.body.appendChild(modal);
-});
+  </div>
+   
+    `;
+    container.appendChild(projectElement);
+  });
+};
+window.onload = getProjects;
 
-const style = $.createElement("style");
-style.innerHTML = `
-  .project-img-container img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s; 
+async function fetchEmailJSKeys() {
+  try {
+    const response = await fetch("http://localhost:8080/api/v1/keys");
+    const keys = await response.json();
+    emailjs.init(keys.userID);
+    return keys;
+  } catch (error) {
+    console.error("Error fetching EmailJS keys:", error);
   }
+}
 
-  .project-img-container img:hover {
-    transform: scale(1.05); 
-    box-shadow: 0px 3px 12px 0px #ccc;
-  }
-
-  @media (max-width: 768px) {
-    portfolio {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (max-width: 480px) {
-    portfolio {
-      grid-template-columns: 1fr;
-    }
-  }
-`;
-$.head.appendChild(style);
-
-emailjs.init("oAK3ECG81WXECBdp8");
-$.getElementById("form").addEventListener("submit", function (event) {
+$.getElementById("form").addEventListener("submit", async function (event) {
   event.preventDefault();
   btnC.value = "Enviando Mensaje...";
-  const serviceID = "service_ukdnwle";
-  const templateID = "template_5gyemyk";
-  emailjs.sendForm(serviceID, templateID, this).then(
-    () => {
-      btnC.value = "Enviar Email";
-      alert("Mensaje enviado con exito!");
-    },
-    (err) => {
-      btnC.value = "Enviar Email";
-      alert(JSON.stringify(err));
-    }
-  );
+  try {
+    const keys = await fetchEmailJSKeys();
+    const serviceID = keys.serviceID;
+    const templateID = keys.templateID;
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btnC.value = "Enviar Email";
+        alert("Mensaje enviado con éxito!");
+      },
+      (err) => {
+        btnC.value = "Enviar Email";
+        alert(JSON.stringify(err));
+      }
+    );
+  } catch (error) {
+    btnC.value = "Enviar Email";
+    alert("Error al enviar el mensaje");
+  }
 });

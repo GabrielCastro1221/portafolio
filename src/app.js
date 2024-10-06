@@ -4,7 +4,7 @@ const cors = require("cors");
 const configObject = require("./config/env.config");
 const { corsOpt } = require("./middlewares/cors.middleware");
 const { logger } = require("./middlewares/logger.middleware");
-const routerKeys = require("./routes/email.routes");
+const routerKeys = require("./routes/env.routes");
 const routerProjects = require("./routes/projects.routes");
 require("./config/connection.config");
 

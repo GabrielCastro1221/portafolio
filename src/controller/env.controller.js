@@ -1,6 +1,6 @@
 const configObject = require("../config/env.config");
 
-class EmailjsController {
+class EnvController {
   EnviromentVariables = async (req, res) => {
     try {
       res.status(200).json({
@@ -18,4 +18,4 @@ class EmailjsController {
   };
 }
 
-module.exports = EmailjsController;
+module.exports = EnvController;
