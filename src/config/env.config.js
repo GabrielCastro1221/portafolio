@@ -20,6 +20,17 @@ const configObject = {
     log_to_file: process.env.LOG_TO_FILE,
     log_file_name: process.env.LOG_FILE_NAME,
   },
+  swagger: {
+    swagger_title: process.env.SWAGGER_TITLE,
+    swagger_description: process.env.SWAGGER_DESCRIPTION,
+    swagger_version: process.env.SWAGGER_VERSION,
+    swagger_contact_name: process.env.SWAGGER_CONTACT_NAME,
+    swagger_contact_email: process.env.SWAGGER_CONTACT_EMAIL,
+    swagger_server_url: process.env.SWAGGER_SERVER_URL,
+    swagger_server_description: process.env.SWAGGER_SERVER_DESCRIPTION,
+    swagger_apis_path: process.env.SWAGGER_APIS_PATH,
+    swagger_openapi: process.env.SWAGGER_OPENAPI,
+  },
 };
 
 module.exports = configObject;

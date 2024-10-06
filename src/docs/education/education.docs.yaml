@@ -1,0 +1,188 @@
+paths:
+  /api/v1/education:
+    post:
+      sumamry: Crear Educacion
+      tags:
+        - Educacion
+      requestBody:
+        description: Datos necesarios para crear la educucion
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/CreateEducation"
+        responses:
+          "200":
+            description: Educacion creada con exito!
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    type: string
+                    example: Educacion creada con exito!
+                  education:
+                    $ref: "#components/schemas/Education"
+          "401":
+            description: Educacion no encontrada!
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    type: string
+                    example: Educacion no encontrada!
+          "500":
+            description: Error interno del servidor!
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    type: string
+                    example: Error interno del servidor!
+
+    get:
+      summary: Obtener Educacion
+      tags:
+        - Educacion
+      responses:
+        "201":
+          description: Educacion encontrada!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Educacion encontrada!
+        "404":
+          description: Educacion no encontrada!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Educacion no encontrada!
+        "500":
+          description: Error interno del servidor!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Error interno del servidor!
+
+  /api/v1/education/{id}:
+    put:
+      summary: Actualizar Educacion
+      tags:
+        - Educacion
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Id de la educacion
+      requestBody:
+        description: Datos necesarios para crear la educucion
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/UpdateEducation"
+      responses:
+        "201":
+          description: Educacion actualizada con exito!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Educacion atualizada con exito!
+        "404":
+          description: Educacion no encontrada!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Educacion no encontrada!
+        "500":
+          description: Error interno del servidor!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Error interno del servidor!
+
+    delete:
+      summary: Eliminar Educacion
+      tags:
+        - Educacion
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Id de la educacion
+      responses:
+        "201":
+          description: Educacion eliminada con exito!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Educacion eliminada con exito!
+        "404":
+          description: Educacion no encontrada con exito!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Educacion no encontrada!
+        "500":
+          description: Error interno del servidor!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type: string
+                  example: Error interno del servidor!
+
+components:
+  schemas:
+    Education:
+      type: object
+      properties:
+        startin_date:
+          type: string
+          description: Fecha inicio
+        ending_date:
+          type: string
+          description: Fecha final
+        school:
+          type: string
+          description: Lugar del grado
+        degree:
+          type: string
+          description: Nombre del titulo
+        description:
+          type: string
+          description: Descripcion del titulo
+  requestBodies:
+    CreateEducation:
+    UpdateEducation:

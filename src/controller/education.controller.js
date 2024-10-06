@@ -5,17 +5,17 @@ class EducationController {
     try {
       const education = await educationModel.find({});
       if (!education) {
-        res
+        return res
           .status(404)
           .json({ status: false, message: "Educacion no encontrada" });
       }
-      res.status(201).json({
+      return res.status(201).json({
         status: true,
         message: "Educacion encontrada",
         education: education,
       });
     } catch (err) {
-      res.status(500).json({
+      return res.status(500).json({
         status: false,
         message: "Internal server error",
         error: err.message,
@@ -24,21 +24,13 @@ class EducationController {
   };
 
   createEducation = async (req, res) => {
-    const { starting_date, ending_date, school, degree, description } =
-      req.body;
+    const { starting_date, ending_date, school, degree, description } = req.body;
     try {
-      if (
-        !starting_date &&
-        !ending_date &&
-        !school &&
-        !degree &&
-        !description
-      ) {
-        res.status(401).json({
+      if (!starting_date || !ending_date || !school || !degree || !description) {
+        return res.status(401).json({
           status: false,
           message: "Todos los campos son obligatorios",
         });
-        return;
       }
       const newEducation = new educationModel({
         starting_date,
@@ -47,14 +39,14 @@ class EducationController {
         degree,
         description,
       });
-      newEducation.save();
-      res.status(200).json({
+      await newEducation.save();
+      return res.status(200).json({
         status: true,
         message: "Educacion creada con exito!",
         education: newEducation,
       });
     } catch (err) {
-      res.status(500).json({
+      return res.status(500).json({
         status: false,
         message: "Internal server error",
         error: err.message,
@@ -71,17 +63,17 @@ class EducationController {
         { new: true }
       );
       if (!updateEducation) {
-        res
+        return res
           .status(404)
           .json({ status: false, message: "Educacion no encontrada" });
       }
-      res.status(201).json({
+      return res.status(201).json({
         status: true,
         message: "Educacion actualizada con exito!",
         education: updateEducation,
       });
     } catch (err) {
-      res.status(500).json({
+      return res.status(500).json({
         status: false,
         message: "Internal server error",
         error: err.message,
@@ -94,19 +86,17 @@ class EducationController {
     try {
       const deleteEducation = await educationModel.findByIdAndDelete(id);
       if (!deleteEducation) {
-        res
+        return res
           .status(404)
           .json({ status: false, message: "Educacion no encontrada" });
       }
-      res
-        .status(201)
-        .json({
-          status: true,
-          message: "Educacion eliminada con exito!",
-          education: deleteEducation,
-        });
+      return res.status(201).json({
+        status: true,
+        message: "Educacion eliminada con exito!",
+        education: deleteEducation,
+      });
     } catch (err) {
-      res.status(500).json({
+      return res.status(500).json({
         status: false,
         message: "Internal server error",
         error: err.message,
