@@ -16,6 +16,12 @@
   --secondary-heading: #277b6d;
 }
 
+body {
+  width: 100%;
+  min-height: 100vh;
+  border-color: var(--bg-clr-one);
+}
+
 html {
   scroll-behavior: auto;
 }
@@ -36,6 +42,26 @@ html {
   cursor: pointer;
   transition: 0.4s;
 }
+
+.btn-contact {
+  background-color: var(--primary-clr);
+  color: var(--bg-clr-one);
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-contact:hover {
+  background-color: var(--links-clr);
+  color: var(--primary-light-clr);
+  border: 1px solid var(--primary-clr);
+}
+
 
 .btnCv:hover {
   background-color: var(--bg-clr-one);
@@ -59,6 +85,14 @@ button.btn:hover {
   background-color: var(--bg-clr-one);
   color: var(--primary-clr);
   border: 1px solid var(--primary-clr);
+}
+
+.sub {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--primary-clr);
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .website-container section.reusable {
@@ -87,12 +121,6 @@ button.btn:hover {
 .website-container section.reusable .headings p {
   font-size: 15px;
   color: var(--text-clr);
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  border-color: var(--bg-clr-one);
 }
 
 .website-container {
@@ -525,85 +553,6 @@ h2 {
   font-size: 120%;
   margin-bottom: 20px;
   color: var(--primary-clr);
-}
-
-.filter-menu {
-  margin-bottom: 20px;
-}
-
-.filter-menu li {
-  display: inline-block;
-  padding: 10px 18px;
-  background: var(--links-clr);
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.filter-menu li:hover,
-.filter-menu li.current {
-  background: var(--primary-clr);
-}
-
-.filter-item li {
-  width: 50%;
-  padding: 2px;
-  float: left;
-}
-
-.filter-item li.active {
-  width: 50%;
-  padding: 2px;
-  transition: all 0.5s ease;
-}
-
-.filter-item li.delete {
-  width: 0%;
-  padding: 0;
-  transition: all 0.5s ease;
-}
-
-.filter-item img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 1024px) {
-  .filter-item li {
-    width: 33.33%;
-  }
-
-  .filter-menu li {
-    padding: 8px 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .filter-item li {
-    width: 50%;
-  }
-
-  .filter-menu li {
-    padding: 6px 12px;
-    font-size: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-item li {
-    width: 100%;
-  }
-
-  h2 {
-    font-size: 100%;
-  }
-
-  .filter-menu li {
-    padding: 5px 10px;
-    font-size: 80%;
-  }
 }
 
 @media (max-width: 1100px) {

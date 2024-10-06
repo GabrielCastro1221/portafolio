@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Portafolio - Gabriel Castro Ramírez</title>
   </head>
+
   <body>
     <section class="home" id="home">
       <nav class="navbar">
@@ -32,7 +33,7 @@
           <li><a class="fw-bold" href="#home">Inicio</a></li>
           <li><a class="fw-bold" href="#about">Sobre mí</a></li>
           <li><a class="fw-bold" href="#projects">Proyectos</a></li>
-          <li><a class="fw-bold" href="/pages/contact.html">Contáctame</a></li>
+          <li><a class="fw-bold" href="#contact">Contáctame</a></li>
         </ul>
         <div class="button-wrapper">
           <a
@@ -48,22 +49,25 @@
           <span class="bar"></span>
         </div>
       </nav>
-      <div class="hero">
-        <div class="hero-text">
-          <h3 class="fw-bold">¡Hola!</h3>
-          <h1>Soy Gabriel Castro Ramírez</h1>
-          <h2>Web Developer & Data Science</h2>
-          <p>
-            Programador web con conocimiento en lenguajes de programación como
-            JavaScript, Python, Jupyter Notebook, Machine Learning, Node.js,
-            Express, SQL y MongoDB.
-          </p>
-        </div>
-        <div class="hero-image">
-          <img
-            src="https://raw.githubusercontent.com/GabrielCastro1221/imgs_portfolio/main/Captura_de_pantalla_2024-06-11_013218-removebg-preview.png"
-            alt="Hero Img"
-          />
+      <div class="container hero mt-5 text-center text-lg-start">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-text">
+            <h3 class="fw-bold">¡Hola!</h3>
+            <h1>Soy Gabriel Castro Ramírez</h1>
+            <h2>Programador web</h2>
+            <p>
+              Desarrollador web con conocimientos en lenguajes de programación
+              como JavaScript, Node.js, Express, Python, Machine Learning, Deep
+              Learning, SQL y MongoDB.
+            </p>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="https://raw.githubusercontent.com/GabrielCastro1221/imgs_portfolio/main/Captura_de_pantalla_2024-06-11_013218-removebg-preview.png"
+              alt="Hero Img"
+              class="img-fluid opacity-75 rounded-4"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -80,11 +84,11 @@
         <h3 class="fw-bold">Sobre mí</h3>
         <h2>Conoce un poco acerca de mí</h2>
         <p class="mb-4">
-          Soy una persona que le gusta trabajar en equipo ya que de cada
-          experiencia quedan aprendizajes que ayudan a la formación personal y
-          profesional. Me adapto fácil a los cambios y siempre trato de buscar
-          soluciones pertinentes y efectivas a todos los retos que se me
-          proponen.
+          Soy una persona a la que le gusta trabajar en equipo, ya que de cada
+          experiencia se obtienen aprendizajes que contribuyen a mi formación
+          personal y profesional. Me adapto fácilmente a los cambios y siempre
+          trato de buscar soluciones pertinentes y efectivas para todos los
+          retos que se me presentan.
         </p>
         <div class="about-personal-info mb-4 ms-4">
           <div>
@@ -128,15 +132,65 @@
     </section>
 
     <section class="container-p" id="projects">
-      <h2>Mis proyectos personales</h2>
-      <ul class="filter-menu mt-4" id="menuProjects"></ul>
-      <ul class="filter-item" id="portfolio"></ul>
+      <h2>Mi Portafolio</h2>
+      <h3 class="sub">Dale un Vistazo a Mi Trabajo</h3>
+      <ul class="container filter-menu mt-4" id="menuProjects"></ul>
+      <div class="container project-bg py-3 rounded">
+        <ul class="filter-item" id="portfolio"></ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3 class="text-center sub">Tu Opinión es Importante para Mí</h3>
+      <h2 class="text-center">Contactame</h2>
+      <form id="form" class="container shadow-sm rounded px-4 py-4 mb-3">
+        <div class="mb-3">
+          <label for="from_name" class="form-label">Nombre:</label>
+          <input
+            type="text"
+            id="from_name"
+            name="from_name"
+            placeholder="Escribe tu nombre"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email_id" class="form-label">Correo Electrónico:</label>
+          <input
+            type="email"
+            id="email_id"
+            name="email_id"
+            placeholder="example@gmail.com"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Tu Mensaje:</label>
+          <textarea
+            rows="3"
+            id="message"
+            name="message"
+            placeholder="Deja un mensaje..."
+            class="form-control"
+          ></textarea>
+        </div>
+        <input
+          type="submit"
+          id="button-contact"
+          value="Enviar Email"
+          class="btn-contact"
+        />
+      </form>
     </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script src="js/main.js"></script>
   </body>
