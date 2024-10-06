@@ -8,7 +8,7 @@ const schema = new mongosee.Schema(
     repository_link: { type: String, required: true },
     deploy_link: { type: String, required: true },
   },
-  { timestamps: true }
+  { timestamps: true, timeseries: false }
 );
 
 module.exports = mongosee.model("Projects", schema);
