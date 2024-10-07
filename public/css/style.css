@@ -43,6 +43,25 @@ html {
   transition: 0.4s;
 }
 
+.btn-card {
+  text-decoration: none;
+  background-color: var(--primary-clr);
+  color: var(--bg-clr-one);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-card:hover {
+  background-color: var(--links-clr);
+  color: var(--primary-light-clr);
+  border: 1px solid var(--primary-clr);
+}
+
 .btn-contact {
   background-color: var(--primary-clr);
   color: var(--bg-clr-one);

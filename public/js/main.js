@@ -218,8 +218,10 @@ const renderProjects = (projects) => {
     <div class="card" style="width: 18rem;">
       <img src=${project.img} class="card-img-top" alt=${project.title}>
       <div class="card-body">
-        <h5 class="card-title">${project.title}</h5>
-        <a href="#" class="btn btn-primary">Detalle del proyecto</a>
+        <h5 class="card-title text-center sub">${project.title}</h5>
+        <div class="d-flex align-items-center justify-content-center mt-4">
+          <a href="#" class="btn-card">Detalle del proyecto</a>
+        </div>
       </div>
   </div>
    
