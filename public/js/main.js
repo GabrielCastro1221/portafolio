@@ -218,13 +218,43 @@ const renderProjects = (projects) => {
     <div class="card" style="width: 18rem;">
       <img src=${project.img} class="card-img-top" alt=${project.title}>
       <div class="card-body">
-        <h5 class="card-title text-center sub">${project.title}</h5>
-        <div class="d-flex align-items-center justify-content-center mt-4">
-          <a href="#" class="btn-card">Detalle del proyecto</a>
+        <h5 class="card-title text-center sub border-bottom">${project.title}</h5>
+        <div class="modal-category d-flex align-items-center justify-content-center mb-2">
+          <span class="badge bg-warning-subtle text-success border border-success text-capitalize">
+            ${project.category}
+          </span>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-2">
+          <button class="btn-card" data-bs-toggle="modal" data-bs-target="#modal-${project._id}">Detalle del proyecto</button>
         </div>
       </div>
   </div>
-   
+
+  <div class="modal fade" id="modal-${project._id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- Cambié a modal-lg para tamaño mayor -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title sub">${project.title}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row"> <!-- Usar row para layout de Bootstrap -->
+        <div class="col-md-6">
+          <img src="${project.img}" alt="${project.title}" class="img-fluid rounded shadow-sm" />
+        </div>
+        <div class="col-md-6">
+          <div class="modal-category mb-2">
+            <span class="badge bg-warning-subtle text-success border border-success text-capitalize">${project.category}</span>
+          </div>
+          <p>${project.description}</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="${project.repository_link}" target="_blank" class="btn-card">Código fuente</a>
+        <a href="${project.deploy_link}" target="_blank" class="btn-card">Ver Página Web</a>
+      </div>
+    </div>
+  </div>
+</div>
     `;
     container.appendChild(projectElement);
   });
