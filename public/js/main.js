@@ -19,7 +19,7 @@ const socialData = [
     icon: "fa-brands fa-github",
   },
   {
-    link: "https://www.linkedin.com/in/gabriel-castro-ramirez-b5b590252/",
+    link: "https://www.linkedin.com/in/gabriel-castro-ramirez-937142332/",
     title: "Acceso directo a Linkedin",
     icon: "fa-brands fa-linkedin-in",
   },
