@@ -9,10 +9,8 @@ const routerKeys = require("./routes/env.routes");
 const routerProjects = require("./routes/projects.routes");
 
 const app = express();
-const mode = process.argv[2] || "dev"; // Argumento de línea de comando para definir el modo
 const port = configObject.server.port;
 
-// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
