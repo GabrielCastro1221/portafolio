@@ -194,7 +194,7 @@ skillsDiv.innerHTML = skillsContentHTML;
 
 const getProjects = async () => {
   try {
-    const response = await fetch("http://localhost:8080/api/v1/projects");
+    const response = await fetch("http://localhost:4000/api/v1/projects");
     const data = await response.json();
     if (data.status) {
       renderProjects(data.proyectos);
@@ -261,7 +261,7 @@ window.onload = getProjects;
 
 async function fetchEmailJSKeys() {
   try {
-    const response = await fetch("http://localhost:8080/api/v1/keys");
+    const response = await fetch("http://localhost:4000/api/v1/keys");
     const keys = await response.json();
     emailjs.init(keys.userID);
     return keys;
